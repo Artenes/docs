@@ -539,10 +539,14 @@ Below is a list of all available validation rules and their function:
 
 The field under validation must be _yes_, _on_, _1_, or _true_. This is useful for validating "Terms of Service" acceptance.
 
+[back](#available-validation-rules)
+
 <a name="rule-active-url"></a>
 #### active_url
 
 The field under validation must have a valid A or AAAA record according to the `dns_get_record` PHP function.
+
+[back](#available-validation-rules)
 
 <a name="rule-after"></a>
 #### after:_date_
@@ -555,70 +559,98 @@ Instead of passing a date string to be evaluated by `strtotime`, you may specify
 
     'finish_date' => 'required|date|after:start_date'
 
+[back](#available-validation-rules)
+
 <a name="rule-alpha"></a>
 #### alpha
 
 The field under validation must be entirely alphabetic characters.
+
+[back](#available-validation-rules)
 
 <a name="rule-alpha-dash"></a>
 #### alpha_dash
 
 The field under validation may have alpha-numeric characters, as well as dashes and underscores.
 
+[back](#available-validation-rules)
+
 <a name="rule-alpha-num"></a>
 #### alpha_num
 
 The field under validation must be entirely alpha-numeric characters.
+
+[back](#available-validation-rules)
 
 <a name="rule-array"></a>
 #### array
 
 The field under validation must be a PHP `array`.
 
+[back](#available-validation-rules)
+
 <a name="rule-before"></a>
 #### before:_date_
 
 The field under validation must be a value preceding the given date. The dates will be passed into the PHP `strtotime` function.
+
+[back](#available-validation-rules)
 
 <a name="rule-between"></a>
 #### between:_min_,_max_
 
 The field under validation must have a size between the given _min_ and _max_. Strings, numerics, and files are evaluated in the same fashion as the [`size`](#rule-size) rule.
 
+[back](#available-validation-rules)
+
 <a name="rule-boolean"></a>
 #### boolean
 
 The field under validation must be able to be cast as a boolean. Accepted input are `true`, `false`, `1`, `0`, `"1"`, and `"0"`.
+
+[back](#available-validation-rules)
 
 <a name="rule-confirmed"></a>
 #### confirmed
 
 The field under validation must have a matching field of `foo_confirmation`. For example, if the field under validation is `password`, a matching `password_confirmation` field must be present in the input.
 
+[back](#available-validation-rules)
+
 <a name="rule-date"></a>
 #### date
 
 The field under validation must be a valid date according to the `strtotime` PHP function.
+
+[back](#available-validation-rules)
 
 <a name="rule-date-format"></a>
 #### date_format:_format_
 
 The field under validation must match the given _format_. The format will be evaluated using the PHP `date_parse_from_format` function. You should use **either** `date` or `date_format` when validating a field, not both.
 
+[back](#available-validation-rules)
+
 <a name="rule-different"></a>
 #### different:_field_
 
 The field under validation must have a different value than _field_.
+
+[back](#available-validation-rules)
 
 <a name="rule-digits"></a>
 #### digits:_value_
 
 The field under validation must be _numeric_ and must have an exact length of _value_.
 
+[back](#available-validation-rules)
+
 <a name="rule-digits-between"></a>
 #### digits_between:_min_,_max_
 
 The field under validation must have a length between the given _min_ and _max_.
+
+[back](#available-validation-rules)
 
 <a name="rule-dimensions"></a>
 #### dimensions
@@ -633,6 +665,8 @@ A _ratio_ constraint should be represented as width divided by height. This can 
 
     'avatar' => 'dimensions:ratio=3/2'
 
+[back](#available-validation-rules)
+
 <a name="rule-distinct"></a>
 #### distinct
 
@@ -640,10 +674,14 @@ When working with arrays, the field under validation must not have any duplicate
 
     'foo.*.id' => 'distinct'
 
+[back](#available-validation-rules)
+
 <a name="rule-email"></a>
 #### email
 
 The field under validation must be formatted as an e-mail address.
+
+[back](#available-validation-rules)
 
 <a name="rule-exists"></a>
 #### exists:_table_,_column_
@@ -675,50 +713,70 @@ If you would like to customize the query executed by the validation rule, you ma
         ],
     ]);
 
+[back](#available-validation-rules)
+
 <a name="rule-file"></a>
 #### file
 
 The field under validation must be a successfully uploaded file.
+
+[back](#available-validation-rules)
 
 <a name="rule-filled"></a>
 #### filled
 
 The field under validation must not be empty when it is present.
 
+[back](#available-validation-rules)
+
 <a name="rule-image"></a>
 #### image
 
 The file under validation must be an image (jpeg, png, bmp, gif, or svg)
+
+[back](#available-validation-rules)
 
 <a name="rule-in"></a>
 #### in:_foo_,_bar_,...
 
 The field under validation must be included in the given list of values.
 
+[back](#available-validation-rules)
+
 <a name="rule-in-array"></a>
 #### in_array:_anotherfield_
 
 The field under validation must exist in _anotherfield_'s values.
+
+[back](#available-validation-rules)
 
 <a name="rule-integer"></a>
 #### integer
 
 The field under validation must be an integer.
 
+[back](#available-validation-rules)
+
 <a name="rule-ip"></a>
 #### ip
 
 The field under validation must be an IP address.
+
+[back](#available-validation-rules)
 
 <a name="rule-json"></a>
 #### json
 
 The field under validation must be a valid JSON string.
 
+[back](#available-validation-rules)
+
 <a name="rule-max"></a>
 #### max:_value_
 
 The field under validation must be less than or equal to a maximum _value_. Strings, numerics, and files are evaluated in the same fashion as the [`size`](#rule-size) rule.
+
+[back](#available-validation-rules)
 
 <a name="rule-mimetypes"></a>
 #### mimetypes:_text/plain_,...
@@ -728,6 +786,8 @@ The file under validation must match one of the given MIME types:
     'video' => 'mimetypes:video/avi,video/mpeg,video/quicktime'
 
 To determine the MIME type of the uploaded file, the file's contents will be read and the framework will attempt to guess the MIME type, which may be different from the client provided MIME type.
+
+[back](#available-validation-rules)
 
 <a name="rule-mimes"></a>
 #### mimes:_foo_,_bar_,...
@@ -742,30 +802,42 @@ Even though you only need to specify the extensions, this rule actually validate
 
 A full listing of MIME types and their corresponding extensions may be found at the following location: [https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types](https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types)
 
+[back](#available-validation-rules)
+
 <a name="rule-min"></a>
 #### min:_value_
 
 The field under validation must have a minimum _value_. Strings, numerics, and files are evaluated in the same fashion as the [`size`](#rule-size) rule.
+
+[back](#available-validation-rules)
 
 <a name="rule-nullable"></a>
 #### nullable
 
 The field under validation may be `null`. This is particularly useful when validating primitive such as strings and integers that can contain `null` values.
 
+[back](#available-validation-rules)
+
 <a name="rule-not-in"></a>
 #### not_in:_foo_,_bar_,...
 
 The field under validation must not be included in the given list of values.
+
+[back](#available-validation-rules)
 
 <a name="rule-numeric"></a>
 #### numeric
 
 The field under validation must be numeric.
 
+[back](#available-validation-rules)
+
 <a name="rule-present"></a>
 #### present
 
 The field under validation must be present in the input data but can be empty.
+
+[back](#available-validation-rules)
 
 <a name="rule-regex"></a>
 #### regex:_pattern_
@@ -773,6 +845,8 @@ The field under validation must be present in the input data but can be empty.
 The field under validation must match the given regular expression.
 
 **Note:** When using the `regex` pattern, it may be necessary to specify rules in an array instead of using pipe delimiters, especially if the regular expression contains a pipe character.
+
+[back](#available-validation-rules)
 
 <a name="rule-required"></a>
 #### required
@@ -788,55 +862,77 @@ The field under validation must be present in the input data and not empty. A fi
 
 </div>
 
+[back](#available-validation-rules)
+
 <a name="rule-required-if"></a>
 #### required_if:_anotherfield_,_value_,...
 
 The field under validation must be present and not empty if the _anotherfield_ field is equal to any _value_.
+
+[back](#available-validation-rules)
 
 <a name="rule-required-unless"></a>
 #### required_unless:_anotherfield_,_value_,...
 
 The field under validation must be present and not empty unless the _anotherfield_ field is equal to any _value_.
 
+[back](#available-validation-rules)
+
 <a name="rule-required-with"></a>
 #### required_with:_foo_,_bar_,...
 
 The field under validation must be present and not empty _only if_ any of the other specified fields are present.
+
+[back](#available-validation-rules)
 
 <a name="rule-required-with-all"></a>
 #### required_with_all:_foo_,_bar_,...
 
 The field under validation must be present and not empty _only if_ all of the other specified fields are present.
 
+[back](#available-validation-rules)
+
 <a name="rule-required-without"></a>
 #### required_without:_foo_,_bar_,...
 
 The field under validation must be present and not empty _only when_ any of the other specified fields are not present.
+
+[back](#available-validation-rules)
 
 <a name="rule-required-without-all"></a>
 #### required_without_all:_foo_,_bar_,...
 
 The field under validation must be present and not empty _only when_ all of the other specified fields are not present.
 
+[back](#available-validation-rules)
+
 <a name="rule-same"></a>
 #### same:_field_
 
 The given _field_ must match the field under validation.
+
+[back](#available-validation-rules)
 
 <a name="rule-size"></a>
 #### size:_value_
 
 The field under validation must have a size matching the given _value_. For string data, _value_ corresponds to the number of characters. For numeric data, _value_ corresponds to a given integer value. For an array, _size_ corresponds to the `count` of the array. For files, _size_ corresponds to the file size in kilobytes.
 
+[back](#available-validation-rules)
+
 <a name="rule-string"></a>
 #### string
 
 The field under validation must be a string. If you would like to allow the field to also be `null`, you should assign the `nullable` rule to the field.
 
+[back](#available-validation-rules)
+
 <a name="rule-timezone"></a>
 #### timezone
 
 The field under validation must be a valid timezone identifier according to the `timezone_identifiers_list` PHP function.
+
+[back](#available-validation-rules)
 
 <a name="rule-unique"></a>
 #### unique:_table_,_column_,_except_,_idColumn_
@@ -880,10 +976,14 @@ You may also specify additional query constraints by customizing the query using
         $query->where('account_id', 1);
     })
 
+[back](#available-validation-rules)
+
 <a name="rule-url"></a>
 #### url
 
 The field under validation must be a valid URL.
+
+[back](#available-validation-rules)
 
 <a name="conditionally-adding-rules"></a>
 ## Conditionally Adding Rules
@@ -921,6 +1021,7 @@ The first argument passed to the `sometimes` method is the name of the field we 
 
 > {tip} The `$input` parameter passed to your `Closure` will be an instance of `Illuminate\Support\Fluent` and may be used to access your input and files.
 
+
 <a name="validating-arrays"></a>
 ## Validating Arrays
 
@@ -938,6 +1039,7 @@ Likewise, you may use the `*` character when specifying your validation messages
             'unique' => 'Each person must have a unique e-mail address',
         ]
     ],
+
 
 <a name="custom-validation-rules"></a>
 ## Custom Validation Rules
